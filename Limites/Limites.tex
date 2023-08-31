@@ -1,0 +1,143 @@
+\documentclass[a4paper, 12pt]{article}
+
+% PACOTES
+\usepackage[utf8]{inputenc} % Caracteres em geral
+\usepackage[brazilian]{babel} % Idioma da página
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry} % margens
+\usepackage{fancyhdr} % Cabeçalho
+\usepackage{ulem} % Destacar, sublinhar, riscar e etc...
+\usepackage{graphicx} % Figuras
+\usepackage{booktabs} % Tabelas
+\usepackage{multicol} % Multicolunas para tabelas
+\usepackage{multirow} % Multilinhas para tabelas
+\usepackage{colortbl} % Colorir tabelas
+\usepackage[table]{xcolor} % Para usar !25 !50 !75 nas cores
+\usepackage{float} % Para manter as tabelas no canto certo
+\usepackage{amsmath} % Matrizes
+\usepackage{hyperref} % Hyperlinks
+\usepackage{tikz} % TikZ - Desenhos e Gráficos
+\usepackage{amsmath,amssymb} % Mais símbolos matemáticos
+\usepackage[shortlabels]{enumitem} % Usar letras no enumerate
+
+% PREÂMBULOS
+\pagenumbering{Roman}
+\tikzstyle{every picture}+=[remember picture,inner xsep=0,inner ysep=0.25ex]
+
+% INÍCIO DO DOCUMENTO
+\begin{document}
+
+\section{Definição Informal de Limite de uma
+Função}
+\subsection{Exercícios}
+
+\begin{enumerate}
+    \item Use a simplificação algébrica para achar o limite, caso exista, utilizando valores próximos
+    \begin{enumerate}[(a)]
+
+        \item $\lim_{x \to -3} \frac{(x + 3) \cdot (x-4)}{(x+1) \cdot (x+3)}$
+        
+        \begin{align*}
+            \lim_{x \to -3} \frac{(x + 3) \cdot (x-4)}{(x+1) \cdot (x+3)} &= \lim_{x \to -3} \frac{x-4}{x+1} \\
+            &= \frac{\lim_{x \to -3}(x-4)}{\lim_{x \to -3} (x+1)} \\
+            &= \frac{\lim_{x \to -3}x-\lim_{x \to -3}4}{\lim_{x \to -3} x+\lim_{x \to -3}1} \\
+            &= \frac{-3 -4}{-4 + 1} \\
+            &= \frac{7}{3}
+        \end{align*}
+
+        \item $\lim_{x \to -1} \frac{(x+1) \cdot (x^{2} + 3)}{x+1}$
+        
+        \begin{align*}
+            \lim_{x \to -1} \frac{(x+1) \cdot (x^{2} + 3)}{x+1} &= \lim_{x \to -1}(x^2 + 3) \\
+            &= (-1)^2 + 3 \\
+            & = 4
+        \end{align*}
+        
+        \item $\lim_{x \to 2} \frac{x^2 - 4}{x - 2}$
+        
+        \begin{align*}
+            \lim_{x \to 2} \frac{x^2 - 4}{x - 2} &= \lim_{x \to 2} \frac{x^2 - 2^2}{x - 2} \\
+            &= \lim_{x \to 2} \frac{(x+2) \cdot (x-2)}{x - 2} \\
+            &= \lim_{x \to 2}(x+2)\\
+            &= 2 + 2 \\
+            &= 4
+        \end{align*}
+
+        \item  $\lim_{x \to 0} \frac{(x+h)^2 - -^2}{h}$
+        
+        \begin{align*}
+            \lim_{h \to 0} \frac{(x+h)^2 - -^2}{h} &= \lim_{h \to 0} \frac{x^2 + 2hx + h^2 -x^2}{h}\\
+            &= \lim_{h \to 0} \frac{h^2 + 2hx}{h}\\
+            &= \lim_{h \to 0} \frac{h\cdot (h + 2x)}{h}\\
+            &= \lim_{h \to 0} (h + 2x)\\
+            &= 2x
+        \end{align*}
+
+        \item $\lim_{z \to 4} \frac{z-4}{z^2 - 2z - 8}$
+        
+        \begin{align*}
+            \lim_{z \to 4} \frac{z-4}{z^2 - 2z - 8} &= \lim_{z \to 4} \frac{z-4}{(z+2) \cdot (z-4)}\\
+            &= \lim_{z \to 4} \frac{1}{z+2}\\
+            &= \frac{\lim_{z \to 4}1}{\lim_{z \to 4}(z+2)} \\
+            &= \frac{1}{6}
+        \end{align*}
+        
+        \item $\lim_{x \to 3} \frac{2x^3 - 6x^2 + x - 3}{x-3}$
+        
+        \begin{align*}
+            \lim_{x \to 3} \frac{2x^3 - 6x^2 + x - 3}{x-3} &=
+            \lim_{x \to 3} \frac{(x-3) \cdot (2x^2 +1)}{x-3}\\
+            &= \lim_{x \to 3} (2x^2 +1) \\
+            &= 2 \cdot 3^2 + 1 \\
+            &= 19
+        \end{align*}
+
+        \item $\lim_{r \to 1} \frac{r^2 - r}{r2 + r - 2}$
+        
+        \begin{align*}
+            \lim_{r \to 1} \frac{r^2 - r}{r2 + r - 2} &=
+            \lim_{r \to 1} \frac{r \cdot (r - 1)}{(r-1) \cdot (r + 2)}\\
+            &= \lim_{r \to 1} \frac{r}{r + 2} \\
+            &= \frac{\lim_{r \to 1}r}{\lim_{r \to 1}(r + 2)}\\
+            &= \frac{1}{3}
+        \end{align*}
+
+        \item $\lim_{r \to -3} \frac{r^2 + 2r - 3}{r^2 + 7r + 12}$
+        
+        \begin{align*}
+            \lim_{r \to -3} \frac{r^2 + 2r - 3}{r^2 + 7r + 12} &= \lim_{r \to -3} \frac{(r-1) \cdot (r+3)}{(r+3) \cdot (r+4)} \\
+            &= \lim_{x \to -3} \frac{r-1}{r+4} \\
+            &= \frac{\lim_{x \to -3}(r-1)}{\lim_{x \to -3}(r+4)} \\
+            &= -4
+        \end{align*}
+
+        \item $\lim_{h \to -2} \frac{h^3 +8}{h+2}$
+        
+        \begin{align*}
+            \lim_{h \to -2} \frac{h^3 +8}{h+2} &= \lim_{h \to -2} \frac{(h+2) \cdot (h^2 -2h +4)}{h+2} \\
+            &= \lim_{h \to -2} (h^2 -2h +4) \\
+            &= (-2)^2 - 2 \cdot (-2) + 4 \\
+            &= 12
+        \end{align*}
+
+        \item $\lim_{h \to -2} \frac{h^3 -8}{h-2}$
+        
+        \begin{align*}
+            \lim_{h \to -2} \frac{h^3 -8}{h-2} &= \lim_{h \to -2} \frac{(h-2) \cdot (h^2 +2h +4)}{h-2} \\
+            &= \lim_{h \to -2} (h^2 +2h +4) \\
+            &= (-2)^2 + 2 \cdot (-2) + 4 \\
+            &= 4
+        \end{align*}
+        
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}
+
+% ANOTAÇÕES
+
+% \\ ou \newline -> quebra de linha
+% \vspace{1cm} -> espaçamento vertical
+% \hspace{1cm} -> espaçamento horizontal
+% ~ -> equivalente a um espaço
+% caracteres especiais -> \# \$ \& \_ \{ \} \textbackslash \textasciitilde
+% LaTeX table generator
