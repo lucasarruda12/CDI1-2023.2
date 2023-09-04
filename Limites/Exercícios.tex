@@ -24,6 +24,8 @@
 \tikzstyle{every picture}+=[remember picture,inner xsep=0,inner ysep=0.25ex]
 \newcommand{\espaco}{\vspace{10pt}}
 
+\newcommand*{\seja}{\text{seja }}
+
 % INÍCIO DO DOCUMENTO
 \begin{document}
 
@@ -207,6 +209,166 @@
         &= \lim_{x \to 4} \frac{5+\sqrt{x^2 + 9}}{4+x}\\
         &= \frac{5}{4}
     \end{align*}
+\end{enumerate}
+
+\newpage
+\section*{Obtendo limites laterais algebricamente}
+
+\begin{enumerate}\addtocounter{enumi}{10}
+    \item $\lim_{x \to -0,5^-} \sqrt{\frac{x+2}{x+1}} = \sqrt{\frac{(-0,5)+2}{(-0,5)+1}} = \sqrt{3}$
+    \item $\lim_{x \to 1^-} \sqrt{\frac{x-1}{x+2}} = \sqrt{\frac{1-1}{1+2}} = 0$
+    \item $\lim_{x \to -2^-} \frac{x}{x+1} \cdot \frac{2x+5}{x^2 + x} = \frac{-2}{-2+1} \cdot \frac{2(-2)+5}{(-2)^2 -2} = 1$
+    \item $\lim_{x \to 1^-} \frac{1}{x+1} \cdot \frac{x+6}{x} \cdot \frac{3-x}{7} = \frac{1}{2} \cdot \frac{7}{1} \cdot \frac{2}{7} = 1$
+    \item $\lim_{h \to 0^+} \frac{\sqrt{h^2 + 4h + 5} - \sqrt{5}}{h} = \frac{2\sqrt{5}}{5}$ [Por diferença dos quadrados]
+    \item $\lim_{h \to 0^-} \frac{\sqrt{6} - \sqrt{hh^2 +11h + 6}}{h} = -\frac{11\sqrt{6}}{12}$ [Por diferença dos quadrados]
+    \item 
+    \begin{enumerate}
+        \item $\lim_{x \to -2^+} (x+3) \frac{|x+2|}{x+2} = \lim_{x \to -2^+} (x+3) \frac{x+2}{x+2} = 1$
+        \item $\lim_{x \to -2^-} (x+3) \frac{|x+2|}{x+2} = \lim_{x \to -2^-} (x+3) \frac{-(x+2)}{x+2} = -1$
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item $\lim_{x \to 1^+} \frac{\sqrt{2x} \cdot (x-1)}{|x-1|} = \lim_{x \to 1^+} \frac{\sqrt{2x} \cdot (x-1)}{x-1} = \sqrt{2}$
+        \item $\lim_{x \to 1^-} \frac{\sqrt{2x} \cdot (x-1)}{|x-1|} = \lim_{x \to 1^-} \frac{\sqrt{2x} \cdot (x-1)}{-(x-1)} = -\sqrt{2}$
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+\section*{Usando $\lim_{\theta \to 0 \frac{\sin \theta}{\theta}} = 1$}
+\begin{enumerate}\addtocounter{enumi}{20}
+    \item $\lim_{\theta \to 0} \frac{\sin\sqrt{2\theta}}{\sqrt{2\theta}}$
+    
+    \begin{align*}
+        \lim_{\theta \to 0} \frac{\sin\sqrt{2\theta}}{\sqrt{2\theta}} &= \lim_{a \to 0} \frac{\sin\sqrt{a}}{\sqrt{a}} \tag*{[Seja $\sqrt{2 \theta} = a$]}\\
+        &= 1 \\
+    \end{align*}
+
+    \item $\lim_{t \to 0} \frac{\sin kt}{t}$
+    
+    \begin{align*}
+        \lim_{t \to 0} \frac{\sin kt}{t} &= \lim_{a \to 0} \frac{\sin a}{\frac{a}{k}} \tag*{[Seja $kt = a$]}\\
+        &= \lim_{t \to 0} k \frac{\sin a}{a} \\
+        &= k
+    \end{align*}
+
+    \item $\lim_{y \to 0} \frac{\sin 3y}{4y}$
+    
+    \begin{align*}
+        \lim_{y \to 0} \frac{\sin 3y}{4y} &= \lim_{a \to 0} \frac{\sin a}{\frac{4}{3}a} \tag*{[seja 3y = a]}\\
+        &=\lim_{a \to 0} \frac{3}{4} \cdot \frac{\sin a}{a}\\
+        &= \frac{3}{4}
+    \end{align*}
+
+    \item $\lim_{h \to 0} \frac{h}{\sin 3h}$
+    
+    \begin{align*}
+        \lim_{h \to 0} \frac{h}{\sin 3h} &= \lim_{h \to 0} \left(\frac{\sin 3h}{h}\right)^{-1}\\
+        &=\left(\lim_{a \to 0} \frac{\sin a}{\frac{a}{3}}\right)^{-1} \tag*{[Seja 3h = a]}\\
+        &= 3^{-1}\\
+        &= \frac{1}{3}
+    \end{align*}
+
+    \item $\lim_{x \to 0} \frac{\tan 2x}{x}$
+    
+    \begin{align*}
+        \lim_{x \to 0} \frac{\tan 2x}{x} &= \lim_{x \to 0} \frac{\frac{\sin 2x}{\cos 2x}}{x} \\
+        &= \lim_{x \to 0} \frac{\sin 2x}{x \cos 2x}\\
+        &= \lim_{x \to 0} \frac{\sin 2x}{x} \cdot \frac{1}{ \cos 2x} \\
+        &= \lim_{x \to 0} \frac{\sin 2x}{x} \cdot \lim_{x \to 0}\frac{1}{ \cos 2x}\\
+        &= 2
+    \end{align*}
+
+    \item $\lim_{t \to 0} \frac{2t}{\tan t}$
+    
+    \begin{align*}
+        \lim_{t \to 0} \frac{2t}{\tan t} &= \lim_{t \to 0} \frac{2t}{\frac{\sin t}{ \cos t}}\\
+        &= \lim_{t \to 0} 2 \cos t \cdot \frac{2t}{\sin t}\\
+        &= \lim_{t \to 0} 2 \cos t \cdot \left(\lim_{t \to 0}  \frac{\sin t}{t} \right)^{-1}\\
+        &= 2
+    \end{align*} 
+
+    \item $\lim_{x \to 0} \frac{x \csc 2x}{\cos 5x}$
+    
+    \begin{align*}
+        \lim_{x \to 0} \frac{x \csc 2x}{\cos 5x} &= \lim_{x \to 0} \frac{\frac{x}{\sin 2x}}{\cos 5x}\\
+        &= \frac{ \lim_{x \to 0}\frac{x}{\sin 2x}}{\lim_{x \to 0} \cos 5x}\\
+        &= \frac{1}{2}
+    \end{align*}
+
+    \item $\lim_{x \to 0} 6x^2 (\cot x) (\csc 2x)$
+    
+    \begin{align*}
+        \lim_{x \to 0} 6x^2 (\cot x) (\csc 2x) &= \lim_{x \to 0} 3\cdot 2x \cdot x \frac{\cos x}{\sin x} \frac{1}{\sin 2x}\\
+        &= \lim_{x \to 0} 3\cdot\frac{x \cos x}{\sin x}\cdot \frac{2x}{\sin 2x}\\
+        &= \lim_{x \to 0} 3 \cdot \cos x \cdot 1\\
+        &= 3
+    \end{align*}
+
+    \item $\lim_{x \to 0} \frac{x + x \cos x}{\sin x \cos x}$
+    
+    \begin{align*}
+        \lim_{x \to 0} \frac{x + x \cos x}{\sin x \cos x} &= \lim_{x \to 0} \frac{x\cdot(1 + \cos x)}{\sin x \cos x}\\
+        &=\lim_{x \to 0} \frac{x}{\sin x} \cdot \lim_{x \to 0}\frac{1 + \cos x}{\cos x}\\
+        &= 2
+    \end{align*}
+
+    \item $\lim_{x \to 0} \frac{x^2 - x + \sin x}{2x}$
+    
+    \begin{align*}
+        \lim_{x \to 0} \frac{x^2 - x + \sin x}{2x} &= \lim_{x \to 0} \frac{2x(\frac{x}{2} - \frac{1}{2} + \frac{\sin x}{2x})}{2x} \\
+        &= \lim_{x \to 0} \frac{x}{2} - \frac{1}{2} + \frac{\sin x}{2x} \\
+        &= \lim_{x \to 0} \frac{x}{2} - \frac{1}{2} + \lim_{x \to 0}\frac{\sin x}{2x}\\
+        &= 0
+    \end{align*}
+
+    \item $\lim_{t \to 0} \frac{\sin(1 -\cos t)}{1-\cos t} = 1$
+    \item $\lim_{h \to 0} \frac{\sin(\sin h)}{\sin h} = 1$
+    \item $\lim_{\theta \to 0} \frac{\sin \theta}{\sin 2\theta}$
+    
+    \begin{align*}
+        \lim_{\theta \to 0} \frac{\sin \theta}{\sin 2\theta} &= \lim_{\theta \to 0} \frac{\sin \theta}{\sin 2\theta} \cdot \frac{\theta}{\theta}\\
+        &= \lim_{\theta \to 0} \frac{\theta}{\sin 2\theta} \cdot \frac{\sin \theta}{\theta}\\
+        &= \lim_{\theta \to 0}\frac{\theta}{\sin 2\theta} \cdot \lim_{\theta \to 0}\frac{\sin \theta}{\theta}\\
+        &= \frac{1}{2}
+    \end{align*}
+
+    \item $\lim_{x \to 0} \frac{\sin 5x}{\sin 4x}$
+    
+    \begin{align*}
+        \lim_{x \to 0} \frac{\sin 5x}{\sin 4x} &= \lim_{x \to 0} \frac{\sin 5x}{\sin 4x} \cdot \frac{4x}{4x}\\
+        &=\lim_{x \to 0} \frac{4x}{\sin 4x} \cdot \frac{\sin 5x}{4x}\\
+        &= \lim_{x \to 0} \frac{4x}{\sin 4x} \cdot \lim_{x \to 0}\frac{\sin 5x}{4x}\\
+        &=\frac{5}{4}
+    \end{align*}
+
+    \item $\lim_{x \to 0} \frac{\tan 3x}{\sin 8x}$
+    
+    \begin{align*}
+        \lim_{x \to 0} \frac{\tan 3x}{\sin 8x} &= \lim_{x \to 0} \frac{\sin 3x}{\cos (3x)\sin (8x)}\\
+        &= \lim_{x \to 0} \frac{1}{\cos (3x)} \cdot \lim_{x \to 0}\frac{\sin 3x}{\sin 8x}\\
+        &= \lim_{x \to 0} \frac{\sin 3x}{\sin 8x} \cdot \frac{3x}{3x}\\
+        &= \lim_{x \to 0} \frac{\sin 3x}{3x} \cdot \frac{3x}{\sin 8x}\\
+        &= \lim_{x \to 0} \frac{\sin 3x}{3x} \cdot \lim_{x \to 0} \frac{3x}{\sin 8x}\\
+        &= \frac{3}{8}
+    \end{align*}
+
+    \item $\lim_{x \to 0} \frac{\sin 3y \cot 5y}{y \cot 4y}$
+    
+    \begin{align*}
+        \lim_{y \to 0} \frac{\sin 3y \cot 5y}{y \cot 4y} &= \lim_{y \to 0} \frac{\sin 3y}{y} \lim_{y \to 0} \frac{ \cot 5y}{ \cot 4y}\\
+        &= 3\cdot \lim_{y \to 0} \frac{\cos 5y \sin 4y}{\cos 4y \sin 5y}\\
+        &= 3\cdot \lim_{y \to 0} (\cos 5y) \cdot  \lim_{y \to 0} \frac{1}{\cos 5y } \cdot  \lim_{y \to 0} \frac{\sin 4y}{\sin 5y}\\
+        &= 3 \cdot \lim_{y \to 0} \frac{\sin 4y}{\sin 5y} \cdot \frac{4y}{4y}\\
+        &= 3 \cdot \lim_{y \to 0} \frac{\sin 4y}{4y} \cdot \frac{4y}{\sin 5y}\\
+        &= 3 \cdot \frac{4y}{\sin 5y}\\
+        &= \frac{12}{5}
+    \end{align*}
+\end{enumerate}
+
+\newpage
+\section*{Calculando limites quando $x \to \pm\infty$}
+\begin{enumerate}\addtocounter{enumi}{36}
+    \item 
 \end{enumerate}
 
 \end{document}
